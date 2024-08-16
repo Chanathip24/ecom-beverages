@@ -1,0 +1,12 @@
+.announce{
+    width: 100vw;
+    height: 40px;
+    border: saddlebrown red;
+    background-color: #bbf3a2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.announce-wrapper{
+
+}

@@ -3,10 +3,12 @@
     height: 40px;
     border: saddlebrown red;
     background-color: #bbf3a2;
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
 }
 .announce-wrapper{
-
+    p{   
+        font-size: 0.9rem;
+    }
 }

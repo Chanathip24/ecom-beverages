@@ -1,0 +1,13 @@
+.Subhero{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+.Subhero-wrapper {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 200px;
+}

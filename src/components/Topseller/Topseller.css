@@ -1,0 +1,33 @@
+.topseller{
+    width: 100vw;
+    display: flex;
+    border: solid red;
+    flex-direction: column;
+    align-items: center;
+    button.active{
+        padding: 5px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1.5px solid black;
+        color: black;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 350;
+        transition: 0.5s ease-in-out;
+    }
+    button{
+        padding: 5px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1.5px solid #c7c7c7;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #c7c7c7;
+        font-weight: 350;
+    }
+}
+
+.topsellercata{
+    display: flex;
+    gap: 8px;
+}

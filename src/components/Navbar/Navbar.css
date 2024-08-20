@@ -6,7 +6,10 @@ nav{
     display: flex;
     align-items: center;
     position: sticky;
+    top: 0;
+    z-index: 2;
 }
+
 .nav-container{
     padding: 5px 20px;
     width: 100%;
@@ -26,7 +29,8 @@ nav{
         height: auto;
         li{
             list-style-type: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 350;
             
         }
     }
@@ -37,7 +41,8 @@ nav{
     align-items: center;
     gap: 20px;
     p{
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        font-weight: 350;
     }
     span{
         padding: 1px;

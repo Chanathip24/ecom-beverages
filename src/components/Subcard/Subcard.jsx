@@ -1,9 +1,14 @@
 import React from 'react'
 import './Subcard.css'
 import { TbBottle } from "react-icons/tb";
+import { motion } from 'framer-motion';
 const Subcard = () => {
   return (
-    <div className='Subcard'>
+    <motion.div 
+    initial={{opacity:0}}
+    whileInView={{opacity:1}}
+    transition={{duration:0.5}}
+    className='Subcard'>
         <div className="subcard-wrapper">
             <div className="icon">
                <TbBottle/>
@@ -14,7 +19,7 @@ const Subcard = () => {
             </div>
         </div>
 
-    </div>
+    </motion.div>
   )
 }
 

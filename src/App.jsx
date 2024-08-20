@@ -7,14 +7,13 @@ import { Routes, Route } from 'react-router-dom'
 //pages
 import Index from './pages/Index'
 
-//component
-import Navbar from './components/Navbar/Navbar'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Navbar/>
+    
       <Routes>
         <Route path='/' element={<Index/>}/>
 

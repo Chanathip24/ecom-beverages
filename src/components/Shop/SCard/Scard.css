@@ -1,0 +1,46 @@
+.Scard{
+    
+    width: 355px;
+    .scard-product{
+        border-radius: 10px;
+    }
+    .mainimg{
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .additional{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+
+    }
+    .productdes1{
+        background-color: rgb(9, 158, 9);
+        font-size: 0.8rem;
+        color: white;
+        padding: 3px;
+        border-radius: 3px;
+        letter-spacing: 1px;
+    }
+    .productdes2{
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    h3{
+        font-weight: 550;
+        font-size: 1.1rem;
+    }
+    .scard-detail{
+        margin-top: 10px;
+        .scard-price{
+            font-weight: 200;
+            margin-bottom: 5px;
+        }
+        .scard-desc{
+            color: gray;
+            font-weight: 200;
+            font-size: 0.8rem;
+        }
+    }
+}

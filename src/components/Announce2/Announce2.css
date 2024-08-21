@@ -1,0 +1,23 @@
+.an2{
+    width: 100vw;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.an2text{
+    position: absolute;
+    animation: move 20s infinite linear;
+    
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}

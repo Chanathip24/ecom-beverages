@@ -1,7 +1,7 @@
 .topseller{
     width: 100vw;
     display: flex;
-    border: solid red;
+
     flex-direction: column;
     align-items: center;
     button.active{
@@ -25,9 +25,20 @@
         color: #c7c7c7;
         font-weight: 350;
     }
+    h1{
+        margin-bottom: 20px;
+    }
 }
 
 .topsellercata{
     display: flex;
     gap: 8px;
+}
+
+.card-container{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 25px 10px 80px 10px;
+    
 }

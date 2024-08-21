@@ -1,18 +1,19 @@
 nav{
-    width: 100vw;
-    height: 60px;
+    
+    width: 100%;
     background-color:  rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     display: flex;
-    align-items: center;
+    justify-content: center;
     position: sticky;
     top: 0;
     z-index: 2;
 }
 
 .nav-container{
-    padding: 5px 20px;
-    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,9 +29,10 @@ nav{
         align-items: center;
         height: auto;
         li{
+            cursor: pointer;
             list-style-type: none;
             font-size: 0.85rem;
-            font-weight: 350;
+            font-weight: 450;
             
         }
     }

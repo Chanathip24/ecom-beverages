@@ -54,21 +54,24 @@ const Topseller = () => {
           </button>
         </div>
       </div>
-      <motion.div
-        className="card-container"
-        initial="hidden" //คุม animation ของ children
-        whileInView="visible" //อันนี้ด้วย
-        transition={{
-          staggerChildren: 0.2,
-          delayChildren: 0.3,
-        }}
-        viewport={{ once: true }}
-      >
-        <Scard />
-        <Scard />
-        <Scard />
-        <Scard />
-      </motion.div>
+      <div className="card-container">
+        <motion.div
+          className="card-wrapper"
+          initial="hidden" //คุม animation ของ children
+          whileInView="visible" //อันนี้ด้วย
+          transition={{
+            staggerChildren: 0.2,
+            delayChildren: 0.3,
+          }}
+          viewport={{ once: true }}
+        >
+          <Scard />
+          <Scard />
+          <Scard />
+          <Scard />
+        </motion.div>
+      </div>
+
       <hr />
     </>
   );

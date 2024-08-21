@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../App.css'
 //component
 import Hero from '../components/Hero/Hero'
 import Subhero from '../components/subhero/Subhero'
@@ -9,10 +9,13 @@ import Announce2 from '../components/Announce2/Announce2'
 const Index = () => {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Subhero/>
-    <Topseller/>
+    <main>
+      <Navbar/>
+      <Hero/>
+      <Subhero/>
+      <Topseller/>
+    </main>
+
     
     
     </>

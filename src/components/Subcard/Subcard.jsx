@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 const Subcard = () => {
   return (
     <motion.div 
-    initial={{opacity:0}}
-    whileInView={{opacity:1}}
-    transition={{duration:0.5}}
+    variants={{
+      hidden:{y:30 , opacity:0},
+      visible : { y:0 , opacity:1}
+    }}
+    transition={{duration:0.3}}
     className='Subcard'>
         <div className="subcard-wrapper">
             <div className="icon">

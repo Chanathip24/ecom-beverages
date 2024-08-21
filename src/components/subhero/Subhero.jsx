@@ -6,14 +6,16 @@ const Subhero = () => {
   return (
     <>
       <motion.div className="Subhero"
-      initial={{opacity : 0}}
-      whileInView={{opacity:1}}
+      initial="hidden"
+      whileInView="visible"
       transition={{
-        duration:0.5,
-        staggerChildren:0.5,
-    }}
+        staggerChildren:0.2,
+        delayChildren:0.1
+      }}
+      viewport={{once:true}}
       >
         <div className="Subhero-wrapper">
+          
           <Subcard />
           <Subcard />
           <Subcard />

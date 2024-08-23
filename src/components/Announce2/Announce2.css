@@ -1,17 +1,32 @@
 .an2{
-    width: 100vw;
+    width: 100%;
+    height: max-content;
     display: flex;
     flex-wrap: nowrap;
-    position: relative;
+    
     overflow: hidden;
     
 }
 
-.an2text{
-    position: absolute;
-    animation: move 20s infinite linear;
-    
+.textwrap{
+    margin: 100px 0 100px 0;
+    width: 100%;
 }
+.an2text{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    animation: move 40s infinite linear;
+    h1{
+        font-weight: 300;
+        font-size: 3rem;
+        span{
+            font-weight: 800;
+        }
+    }
+}
+
+
 
 @keyframes move {
     0%{
@@ -20,4 +35,6 @@
     100%{
         transform: translateX(-100%);
     }
+    
+    
 }

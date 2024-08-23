@@ -3,25 +3,6 @@ import { Scard } from "../Shop/SCard/Scard";
 import "./Topseller.css";
 import { motion } from "framer-motion";
 const Topseller = () => {
-  const buttonactive = {
-    padding: 5,
-    borderRadius: 5,
-    backgroundColor: "white",
-    border: "1.5px solid black",
-    cursor: "pointer",
-    fontSize: "1rem",
-    fontWeight: 350,
-  };
-  const button = {
-    padding: 5,
-    borderRadius: 5,
-    backgroundColor: "white",
-    border: "1.5px solid #808080",
-    color: "#808080",
-    cursor: "pointer",
-    fontSize: "1rem",
-    fontWeight: 350,
-  };
   const [active, setActive] = useState(1);
   const set = (id) => {
     setActive(id);
@@ -61,8 +42,9 @@ const Topseller = () => {
           whileInView="visible" //อันนี้ด้วย
           transition={{
             staggerChildren: 0.2,
-            delayChildren: 0.3,
+            delayChildren:0.2
           }}
+          key={`${active}+i`}
           viewport={{ once: true }}
         >
           <Scard />
@@ -72,7 +54,7 @@ const Topseller = () => {
         </motion.div>
       </div>
 
-      <hr />
+  
     </>
   );
 };

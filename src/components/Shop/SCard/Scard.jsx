@@ -18,6 +18,9 @@ export const Scard = () => {
           width={350}
           className="scard-product"
         />
+        <div className="addcart">
+          + ADD TO CART
+        </div>
         <div className="additional">
           <p className="productdes1">NEW</p>
           {/* <p className="productdes2">LIMITED OFFER</p> */}

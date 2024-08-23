@@ -52,6 +52,7 @@ const Carousel = ({ img }) => {
           </div>
           {allimg.map((item, key) => (
             <div
+            key={key}
               className="image-container"
               style={{ translate: `${-100 * index}%` }}
             >

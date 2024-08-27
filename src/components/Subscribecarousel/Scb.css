@@ -66,5 +66,26 @@
     .scb-container{
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 1fr;
+        .scb-right{
+            button{
+                width: 100%;
+            }
+        }
+    }
+}
+@media only screen and (min-width:600px) and (max-width : 990px) {
+    .scb{
+        margin-top: 2rem;
+        height: max-content;
+        
+    }
+    .scb-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+        .scb-right{
+            button{
+                width: 100%;
+            }
+        }
     }
 }

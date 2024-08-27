@@ -3,6 +3,32 @@ import { Scard } from "../Shop/SCard/Scard";
 import "./Topseller.css";
 import { motion } from "framer-motion";
 const Topseller = () => {
+  const allshop = [
+    {
+      title: "Black Summer Glass",
+      price : "21.30",
+      desc : "Black Durable Borosilicate Glass Bottle",
+      imgurl: "image/s1.webp"
+    },
+    {
+      title: "2+2 Limited Summer Set",
+      price : "27.30",
+      desc : "Real Tea, Vitamin and Zero Sugar",
+      imgurl: "image/s2.webp"
+    },
+    {
+      title: "ICED TEA Set",
+      price : "44.30",
+      desc : "Vitamin and Zero Sugar",
+      imgurl: "image/S3.webp"
+    },
+    {
+      title: "Summer Glass",
+      price : "29.30",
+      desc : "Durable Borosilicate Glass Bottle",
+      imgurl: "image/S4.webp"
+    },
+  ];
   const [active, setActive] = useState(1);
   const set = (id) => {
     setActive(id);
@@ -48,10 +74,9 @@ const Topseller = () => {
             key={`${active}+i`}
             viewport={{ once: true }}
           >
-            <Scard />
-            <Scard />
-            <Scard />
-            <Scard />
+            {allshop.map((item, index) => (
+              <Scard product={item} key={index} />
+            ))}
           </motion.div>
         </div>
       </div>

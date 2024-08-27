@@ -1,24 +1,9 @@
-.typedrink{
-    width: 100%;
-    padding: 0 25px 0 25px;
-    margin-bottom: 50px;
-    .content-wrapper{
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        .card{
-            width: 100%;
-            display: flex;
-            gap: 30px;
-        }
-    }
-    .button{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 10px;
-    }
+.button{
+    margin-left: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
     button.active{
         padding: 5px 10px;
         border-radius: 5px;
@@ -40,6 +25,29 @@
         color: #c7c7c7;
         font-weight: 350;
     }
+}
+.typedrink{
+    
+    
+    padding: 0 25px 0 25px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+
+    .content-wrapper{
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        gap: 10px;
+        .card{
+            
+            display: flex;
+            gap: 30px;
+        }
+    }
+
+
 }
 
 @media only screen and (max-width: 600px) {

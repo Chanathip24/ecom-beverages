@@ -1,7 +1,8 @@
 import React from "react";
 import "./Scard.css";
 import {motion} from 'framer-motion'
-export const Scard = () => {
+export const Scard = ({product}) => {
+  
   return (
     <motion.div className="Scard"
     variants={{
@@ -11,9 +12,10 @@ export const Scard = () => {
     transition={{ duration: 0.5 }}
     
     >
+      
       <div className="mainimg">
         <img
-          src="https://www.waterdrop.com/cdn/shop/files/All_purpose_bottles_Thermo_Straw_Lid_1L_black.png?v=1721238266&width=1200"
+          src={product.imgurl}
           alt=""
           width={320}
           className="scard-product"
@@ -26,10 +28,10 @@ export const Scard = () => {
           {/* <p className="productdes2">LIMITED OFFER</p> */}
         </div>
       </div>
-      <h3>All-Purpose Thermo Straw lit</h3>
+      <h3>{product.title}</h3>
       <div className="scard-detail">
-            <p className="scard-price">$34.00</p>
-            <p className="scard-desc">34 oz, 20 oz, 47 oz, 64 oz, 14 oz · Stainless Steel Bottle with Wide Opening · Straw Lid</p>
+            <p className="scard-price">${product.price}</p>
+            <p className="scard-desc">{product.desc}</p>
       </div>
     </motion.div>
   );

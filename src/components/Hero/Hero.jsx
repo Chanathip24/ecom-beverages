@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <div>
         <div className='hero'>
-          <Carousel img={"https://cdn.shopify.com/s/files/1/0087/2159/6471/files/featured_image_all_purpose_straw_lid.jpg?v=1722843700"}/>
+          <Carousel/>
         </div>
 
     </div>

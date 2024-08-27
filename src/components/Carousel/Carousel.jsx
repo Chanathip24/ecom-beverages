@@ -4,19 +4,19 @@ import { AnimatePresence, motion } from "framer-motion";
 
 //arrow icon
 import { IoIosArrowDropright } from "react-icons/io";
-const Carousel = ({ img }) => {
+const Carousel = () => {
   const allimg = [
     {
       id: 1,
       title: "New term new Essential",
       description: "Exclusive Offers that make it easier to sip and study!",
-      img: "https://cdn.shopify.com/s/files/1/0087/2159/6471/files/featured_image_all_purpose_straw_lid.jpg?v=1722843700",
+      img: "image/2.webp",
     },
     {
       id: 2,
       title: "Carousel 2",
       description: "Exclusive Offers that make it easier to sip and study! 2",
-      img: "https://cdn.shopify.com/s/files/1/0087/2159/6471/files/BACK2SCHOOL_-_Home_-_Desktop.jpg?v=1723463239",
+      img: "image/1.webp",
     },
   ];
 

@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
     <Announce/>
     <nav>
-        <div className="nav-container">
+        <div className="nav-container container">
             <div className="nav-wrapper">
                 <img src="//www.waterdrop.com/cdn/shop/files/Main_Logo_260x.svg?v=1703068377" alt="" />
                 

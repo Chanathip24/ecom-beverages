@@ -1,52 +1,56 @@
-.topseller{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    button.active{
-        padding: 5px;
-        border-radius: 5px;
-        background-color: white;
-        border: 1.5px solid black;
-        color: black;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 350;
-        transition: 0.5s ease-in-out;
-    }
-    button{
-        padding: 5px;
-        border-radius: 5px;
-        background-color: white;
-        border: 1.5px solid #c7c7c7;
-        cursor: pointer;
-        font-size: 1rem;
-        color: #c7c7c7;
-        font-weight: 350;
-    }
-    h1{
-        margin-bottom: 20px;
+.topseller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  button.active {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1.5px solid black;
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 350;
+    transition: 0.5s ease-in-out;
+  }
+  button {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1.5px solid #c7c7c7;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #c7c7c7;
+    font-weight: 350;
+  }
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+
+.topsellercata {
+  display: flex;
+  gap: 8px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .card-wrapper{
+        grid-template-columns: 1fr;
+        row-gap: 20px;
     }
 }
 
-.topsellercata{
-    display: flex;
-    gap: 8px;
-}
-
-.card-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
-.card-wrapper{
-    
-    width: max-content;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
-    
-    
-}

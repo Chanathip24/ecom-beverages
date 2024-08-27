@@ -15,7 +15,7 @@ export const Scard = () => {
         <img
           src="https://www.waterdrop.com/cdn/shop/files/All_purpose_bottles_Thermo_Straw_Lid_1L_black.png?v=1721238266&width=1200"
           alt=""
-          width={350}
+          width={320}
           className="scard-product"
         />
         <div className="addcart">

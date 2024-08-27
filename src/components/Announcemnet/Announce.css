@@ -1,14 +1,30 @@
-.announce{
-    width: 100%;
-    height: 40px;
-    border: saddlebrown red;
+.bg-green{
     background-color: #bbf3a2;
+}
+.announce{
+    height: 40px;
     display: flex; 
     justify-content: center;
     align-items: center;
 }
-.announce-wrapper{
-    p{   
-        font-size: 0.9rem;
+
+.announce-wrapper p{
+    font-size: 0.9rem;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .announce-wrapper p{
+        font-size: 0.8rem;
     }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
 }

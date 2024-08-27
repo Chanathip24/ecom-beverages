@@ -45,7 +45,7 @@ const Carousel = ({ img }) => {
   }, []);
   return (
     <>
-      <div className="carouselcontainer">
+      <div className="carouselcontainer container-fluid">
         <div className="carousel">
           <div className="carousel-arrow">
             <IoIosArrowDropright onClick={gonext} />

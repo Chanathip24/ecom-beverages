@@ -1,6 +1,6 @@
 .Scard{
     
-    width: 350px;
+    width: 320px;
     .scard-product{
         border-radius: 10px;
     }
@@ -22,7 +22,7 @@
         z-index: 1;
         background-color: #ffffff;
         left: 15px;
-        width: 320px;
+        width: 290px;
         height: 50px;
         display: flex;
         justify-content: center;

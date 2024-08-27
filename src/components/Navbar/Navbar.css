@@ -1,55 +1,68 @@
-nav{
-    
-    width: 100%;
-    background-color:  rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 2;
+nav {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-.nav-container{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.nav-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.nav-wrapper{
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.nav-wrapper ul {
+  display: flex;
+  gap: 55px;
+  align-items: center;
+  height: auto;
+}
+.nav-wrapper ul li {
+  cursor: pointer;
+  list-style-type: none;
+  font-size: 0.85rem;
+  font-weight: 450;
+}
+.nav-account {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  p {
+    font-size: 0.85rem;
+    font-weight: 350;
+  }
+  span {
+    padding: 1px;
     display: flex;
     align-items: center;
-    gap: 50px;
-    
-    ul{
-        display: flex;
-        gap: 55px;
-        align-items: center;
-        height: auto;
-        li{
-            cursor: pointer;
-            list-style-type: none;
-            font-size: 0.85rem;
-            font-weight: 450;
-            
-        }
+    font-size: 1.5rem;
+  }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .nav-wrapper ul{
+        display: none;
     }
+    .nav-account{
+        display: none;
+    }
+}
 
-}
-.nav-account{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    p{
-        font-size: 0.85rem;
-        font-weight: 350;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .nav-wrapper ul{
+        display: none;
     }
-    span{
-        padding: 1px;
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
+    .nav-account{
+        display: none;
     }
 }
+
+

@@ -5,6 +5,7 @@ import { IoBagOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import Announce from "../Announcemnet/Announce";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [navres, setnavres] = useState(false);
@@ -14,10 +15,12 @@ const Navbar = () => {
       <nav>
         <div className="nav-container container">
           <div className="nav-wrapper">
-            <img
-              src="//www.waterdrop.com/cdn/shop/files/Main_Logo_260x.svg?v=1703068377"
-              alt=""
-            />
+            <Link to="/" onClick={()=>setnavres(false)}>
+              <img
+                src="//www.waterdrop.com/cdn/shop/files/Main_Logo_260x.svg?v=1703068377"
+                alt=""
+              />
+            </Link>
 
             <ul>
               <li>Featured</li>
@@ -35,7 +38,9 @@ const Navbar = () => {
             {navres ? <IoMdCloseCircleOutline /> : <RxHamburgerMenu />}
           </div>
           <div className="nav-account">
-            <p>My account</p>
+            <Link to="/login" onClick={()=>setnavres(false)}>
+              <p style={{ color: "black" }}>My account</p>
+            </Link>
             <span>
               <CiUser />
             </span>
@@ -54,6 +59,9 @@ const Navbar = () => {
               <li>Flavors</li>
               <li>Bottle & Accessories</li>
               <li>Learn More</li>
+              <li>
+                <Link to="/login" onClick={()=>setnavres(false)}>สมัครสมาชิก</Link>
+              </li>
             </ul>
           </div>
         ) : null}

@@ -6,17 +6,17 @@ import { Routes, Route } from 'react-router-dom'
 
 //pages
 import Index from './pages/Index'
+import Login from './pages/Login'
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
     
       <Routes>
         <Route path='/' element={<Index/>}/>
-
+        <Route path='/login' element={<Login/>} />
         {/* 404 page */}
       </Routes>
     </>

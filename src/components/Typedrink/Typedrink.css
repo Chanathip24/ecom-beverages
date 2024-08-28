@@ -29,13 +29,13 @@
 .typedrink{
     
     
-    padding: 0 25px 0 25px;
+    
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
 
     .content-wrapper{
-        
+        width: 80%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: center;

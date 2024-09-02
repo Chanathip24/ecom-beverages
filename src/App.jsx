@@ -13,20 +13,29 @@ import Dashboard from "./pages/Dashboard";
 
 //protectroute admin
 import ProtectRoute from "./services/ProtectRoute";
-
+import Checklogin from "./services/Checklogin";
 function App() {
   return (
     <>
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={
+              <Checklogin>
+                <Login />
+              </Checklogin>
+            }
+          />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/allproducts" element={<Allproducts />} />
           <Route
             path="/dashboard"
             element={
-             <ProtectRoute role={['ADMIN','MEMBER']}><Dashboard/></ProtectRoute>
+              <ProtectRoute role={["ADMIN", "MEMBER"]}>
+                <Dashboard />
+              </ProtectRoute>
             }
           />
           <Route path="*" element={<Index />} />

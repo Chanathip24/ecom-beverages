@@ -14,9 +14,8 @@ const Dashsidebar = ({ activemenu, changemenu }) => {
     const navigate = useNavigate()
     const logout = async()=>{
         try {
-            const res = await axios.get(`${import.meta.env.VITE_URL}/logout`)
-            
-            if(res.data.msg === "pass") navigate('/')
+            localStorage.removeItem('authToken')
+            navigate('/')
         } catch (error) {
             console.log(error)
         }

@@ -23,11 +23,18 @@ const Register = () => {
     try {
         const res = await axios.post(`${import.meta.env.VITE_URL}/login`,user)
         if(res.data.msg === "pass"){
-            navigate('/dashboard')
+            const token = res.headers['authorization'].split(' ')[1]
+            localStorage.setItem('authToken',token)
+            toast.success("Login Success")
+            setTimeout(() => {
+              navigate('/dashboard')
+            }, 1500);
+            
         }else{
-          toast.error("Username or Password is wrong.")
+          toast.error(res.data)
         }
     } catch (error) {
+      
       toast.error("Username or Password is wrong.")
 
     }

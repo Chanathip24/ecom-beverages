@@ -14,9 +14,15 @@ const Navbar = () => {
 
   const checkadmin = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_URL}/checkcookie`);
+      const res = await axios.get(`${import.meta.env.VITE_URL}/checkcookie`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      });
       if (res.data.role === "ADMIN") setAuthen("ADMIN");
+      if (res.data.role === "MEMBER") setAuthen("MEMBER");
     } catch (error) {
+      console.log(error);
       setAuthen(false);
     }
   };
@@ -51,9 +57,9 @@ const Navbar = () => {
           >
             {navres ? <IoMdCloseCircleOutline /> : <RxHamburgerMenu />}
           </div>
-          {isAuthen==="ADMIN" ? (
+          {isAuthen ? (
             <div className="nav-account">
-              <h4 style={{ color: "red" }}>You are Admin</h4>
+              <h4 style={{ color: "GREEN" }}>You are {isAuthen}</h4>
               <Link to="/dashboard">
                 <p style={{ color: "black" }}>Dashboard</p>
               </Link>
@@ -93,14 +99,10 @@ const Navbar = () => {
               <li>Bottle & Accessories</li>
               <li>Learn More</li>
               <li>
-                {isAuthen === "ADMIN" ? (
-                  <Link to="/Dashboard">
-                    Admin Dashboard
-                  </Link>
+                {isAuthen === "ADMIN" || isAuthen === "MEMBER" ? (
+                  <Link to="/Dashboard">{isAuthen} Dashboard</Link>
                 ) : (
-                  <Link to="/login">
-                    Register
-                  </Link>
+                  <Link to="/login">Register</Link>
                 )}
               </li>
             </ul>

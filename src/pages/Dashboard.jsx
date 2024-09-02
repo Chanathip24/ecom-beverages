@@ -9,10 +9,14 @@ const Dashboard = () => {
   const [role, setRole] = useState(null);
   const getrole = async () => {
     try {
-      const res = await axios.get(`${import.meta.env.VITE_URL}/checkcookie`);
+      const res = await axios.get(`${import.meta.env.VITE_URL}/checkcookie`,{
+        headers:{
+            Authorization : `Bearer ${localStorage.getItem('authToken')}`
+        }
+      });
       setRole(res.data.role);
     } catch (error) {
-      console.log(error);
+      console.log("Something wrong happen");
     }
   };
   const changemenu = (id) => {

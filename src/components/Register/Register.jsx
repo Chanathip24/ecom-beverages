@@ -34,7 +34,7 @@ const Register = () => {
           toast.error(res.data)
         }
     } catch (error) {
-      
+      console.log(error)
       toast.error("Username or Password is wrong.")
 
     }

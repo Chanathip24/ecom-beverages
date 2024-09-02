@@ -33,6 +33,7 @@ const handlesubmit= async (event)=>{
       toast.error(res.data)
     }
   } catch (error) {
+    
     toast.error("Error is appear")
   }
 }

@@ -8,14 +8,16 @@ import Navbar from '../components/Navbar/Navbar'
 import Announce2 from '../components/Announce2/Announce2'
 import Typedrink from '../components/Typedrink/Typedrink'
 import Scb from '../components/Subscribecarousel/Scb'
+import Announce from '../components/Announcemnet/Announce'
 const Index = () => {
   return (
     <>
     <main>
+      <Announce/>
       <Navbar/>
       <Hero/>
-      <Subhero/>
       <Topseller/>
+      <Subhero/>
       <Announce2/>
       <Typedrink/>
       <Scb/>

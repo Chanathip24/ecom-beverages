@@ -1,0 +1,12 @@
+.dashcontainer{
+    display: flex;
+    
+}
+
+
+.dashcontent{
+    background-color: #f5f5f5;
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+}

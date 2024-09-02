@@ -1,21 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { CiUser, CiSearch } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import Announce from "../Announcemnet/Announce";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Navbar = () => {
+  axios.defaults.withCredentials = true; //for cookie
   const [navres, setnavres] = useState(false);
+  const [isAuthen, setAuthen] = useState(false);
+
+  const checkadmin = async () => {
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_URL}/checkcookie`);
+      if (res.data.role === "ADMIN") setAuthen("ADMIN");
+    } catch (error) {
+      setAuthen(false);
+    }
+  };
+  useEffect(() => {
+    checkadmin();
+  }, []);
   return (
     <>
-      {navres ? null : <Announce />}
       <nav>
         <div className="nav-container container">
           <div className="nav-wrapper">
-            <Link to="/" onClick={()=>setnavres(false)}>
+            <Link to="/" onClick={() => setnavres(false)}>
               <img
                 src="//www.waterdrop.com/cdn/shop/files/Main_Logo_260x.svg?v=1703068377"
                 alt=""
@@ -29,6 +42,7 @@ const Navbar = () => {
               <li>Learn More</li>
             </ul>
           </div>
+
           <div
             className="burger"
             onClick={() => {
@@ -37,21 +51,40 @@ const Navbar = () => {
           >
             {navres ? <IoMdCloseCircleOutline /> : <RxHamburgerMenu />}
           </div>
-          <div className="nav-account">
-            <Link to="/login" onClick={()=>setnavres(false)}>
-              <p style={{ color: "black" }}>My account</p>
-            </Link>
-            <span>
-              <CiUser />
-            </span>
-            <span>
-              <CiSearch />
-            </span>
-            <span>
-              <IoBagOutline />
-            </span>
-          </div>
+          {isAuthen==="ADMIN" ? (
+            <div className="nav-account">
+              <h4 style={{ color: "red" }}>You are Admin</h4>
+              <Link to="/dashboard">
+                <p style={{ color: "black" }}>Dashboard</p>
+              </Link>
+              <span>
+                <CiUser />
+              </span>
+              <span>
+                <CiSearch />
+              </span>
+              <span>
+                <IoBagOutline />
+              </span>
+            </div>
+          ) : (
+            <div className="nav-account">
+              <Link to="/login">
+                <p style={{ color: "black" }}>My account</p>
+              </Link>
+              <span>
+                <CiUser />
+              </span>
+              <span>
+                <CiSearch />
+              </span>
+              <span>
+                <IoBagOutline />
+              </span>
+            </div>
+          )}
         </div>
+
         {navres ? (
           <div className="resnav">
             <ul>
@@ -60,7 +93,15 @@ const Navbar = () => {
               <li>Bottle & Accessories</li>
               <li>Learn More</li>
               <li>
-                <Link to="/login" onClick={()=>setnavres(false)}>สมัครสมาชิก</Link>
+                {isAuthen === "ADMIN" ? (
+                  <Link to="/Dashboard">
+                    Admin Dashboard
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                    Register
+                  </Link>
+                )}
               </li>
             </ul>
           </div>

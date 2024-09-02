@@ -1,0 +1,28 @@
+.dashsidebar {
+  width: 18%;
+  padding: 2.5rem 2rem;
+}   
+.dashsidebar ul li {
+  list-style-type: none;
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.1s ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.dashsidebar ul li.active{
+    background-color: rgb(141, 68, 209);
+    color: white;
+    
+}
+.dashsidebar ul li.active:hover{
+    background-color: rgb(106, 38, 170);
+    color: white;
+    
+}
+.dashsidebar ul li:hover{
+    background-color: rgb(231, 231, 231);
+    color: black;
+}

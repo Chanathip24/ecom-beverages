@@ -35,7 +35,7 @@ const Topseller = () => {
   };
   return (
     <>
-      <div className="container-fluid">
+      <div className="mt-2 container-fluid">
         <div className="topseller container">
           <h1>Discover our Top Sellers</h1>
           <div className="topsellercata">

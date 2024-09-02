@@ -1,45 +1,83 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./Register.css";
-import axios from 'axios'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 const Log_in = () => {
-    const[user,setuser] = useState({
-        fname : "",
-        lname : '',
-        email : '',
-        password : ''
-    })
-    const handlechange=(event)=>{
-        setuser((prev)=>({...prev,[event.target.name]:event.target.value}))
+  const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
+  const [user, setuser] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    password: "",
+  });
+  const handlechange = (event) => {
+    setuser((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+  const handlesubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_URL}/register`,
+        user
+      );
+      if (res.data.message === "Insert success") {
+        toast.success("Register Success");
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1500);
       }
-      const handlesubmit= async (event)=>{
-        event.preventDefault()
-        try {
-            const res = await axios.post("http://localhost:8000/register",user)
-            if(res.data.message === "Insert success"){
-                alert("register success")
-            }
-        } catch (error) {
-            console.log(error)
-        }
-        
-      }
+    } catch (error) {
+      toast.error("Register Failed");
+    }
+  };
   return (
-    <form className="autheninput">
-      <label htmlFor="fname">First name</label>
-      <input type="fname" onChange={handlechange} name="fname" placeholder="First name" required />
-      <label htmlFor="fname">Last name</label>
+    <>
+      <Toaster />
+      <form className="autheninput">
+        <label htmlFor="fname">First name</label>
+        <input
+          type="fname"
+          onChange={handlechange}
+          name="fname"
+          placeholder="First name"
+          required
+        />
+        <label htmlFor="fname">Last name</label>
 
-      <input type="fname" onChange={handlechange} name="lname" placeholder="Last name"  required/>
-      <label htmlFor="email">Email</label>
-      <input type="email" onChange={handlechange} name="email" placeholder="Email" required />
-      <label htmlFor="Password">Password</label>
-      <input type="password" onChange={handlechange} name="password" placeholder="Password" required/>
-      <p>FORGOT PASSWORD?</p>
-      <div>
-        <button className="login" type="submit" onClick={handlesubmit}>CREATE ACCOUNT</button>
-      </div>
-    </form>
+        <input
+          type="fname"
+          onChange={handlechange}
+          name="lname"
+          placeholder="Last name"
+          required
+        />
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          onChange={handlechange}
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <label htmlFor="Password">Password</label>
+        <input
+          type="password"
+          onChange={handlechange}
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <p>FORGOT PASSWORD?</p>
+        <div>
+          <button className="login" type="submit" onClick={handlesubmit}>
+            CREATE ACCOUNT
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 

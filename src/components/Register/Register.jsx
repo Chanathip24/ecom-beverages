@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./Register.css";
 import Log_in from "./Log_in";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import toast,{Toaster} from 'react-hot-toast'
 const Register = () => {
-    axios.defaults.withCredentials= true
+  axios.defaults.withCredentials= true
+  const navigate = useNavigate()
   const [button, setbutton] = useState(2);
     const[user,setuser] = useState({
         email : '',
@@ -18,19 +21,20 @@ const Register = () => {
   const handlesubmit= async (event)=>{
     event.preventDefault()
     try {
-        const res = await axios.post("https://ecomserver-xgr1.onrender.com/login",user)
+        const res = await axios.post(`${import.meta.env.VITE_URL}/login`,user)
         if(res.data.msg === "pass"){
-            alert("Login sucess")
+            navigate('/dashboard')
         }else{
-            alert("password is wrong")
+          toast.error("Username or Password is wrong.")
         }
     } catch (error) {
-        alert("No user found")
-        console.log(error)
+      toast.error("Username or Password is wrong.")
+
     }
   }
   return (
     <>
+    <Toaster/>
       <div className="authen container-fluid">
         <div className="img">
           <img

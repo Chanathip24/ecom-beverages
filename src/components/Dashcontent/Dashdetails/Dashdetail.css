@@ -1,0 +1,53 @@
+.dashuser{
+    
+    padding: 2rem;
+}
+.dashuser-title{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid gray;
+    button{
+        padding: 10px;
+        border: none;
+        background: none;
+        background-color: rgb(177, 94, 255);
+        color: white;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+}
+.dashuser-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+.dashuser-card{
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashedit{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    h5{
+        cursor: pointer;
+        background-color: rgb(178, 83, 255);
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        border-radius: 5px;
+    }
+}

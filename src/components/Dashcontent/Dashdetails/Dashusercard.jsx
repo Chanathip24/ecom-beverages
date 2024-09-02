@@ -15,7 +15,7 @@ const Dashusercard = ({
   const deleteuser = async () => {
     try {
       const res = await axios.delete(
-        `${import.meta.env.VITE_URL}/${id}`,{
+        `${import.meta.env.VITE_URL}/users/delete/${id}`,{
             headers:{
                 Authorization: `Bearer ${localStorage.getItem('authToken')}`
             }

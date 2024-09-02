@@ -19,19 +19,21 @@ const Log_in = () => {
 const handlesubmit= async (event)=>{
   event.preventDefault()
   try {
-      const res = await axios.post(`${import.meta.env.VITE_URL}/register`, user, {
-        withCredentials: true // Ensure cookies and headers are sent
-      });
-      if(res.data.msg === "pass"){
-          const token = res.headers['authorization'].split(' ')[1];
-          if (token) {
-            localStorage.setItem('authToken', token.split(' ')[1]);
-          }
-      } else {
-        toast.error(res.data);
-      }
+    const res = await axios.post(`${import.meta.env.VITE_URL}/register`,user)
+    if(res.data.message === "Insert success"){
+      
+      const token = res.headers['authorization']
+      localStorage.setItem('authToken',token.split(' ')[1])
+      toast.success('Register Success')
+      setTimeout(() => {
+        navigate('/dashboard')
+      }, 1500);
+      
+    }else{
+      toast.error(res.data)
+    }
   } catch (error) {
-    toast.error("Username or Password is wrong.");
+    toast.error("Error is appear")
   }
 }
   return (

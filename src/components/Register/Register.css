@@ -61,7 +61,9 @@
         font-size: 1rem;
         border-radius: 5px;
         cursor: pointer;
+        transition: 0.1s;
     }
+   
 }
 .autheninput div{
     margin-top: 1rem;

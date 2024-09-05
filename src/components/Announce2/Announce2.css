@@ -7,16 +7,22 @@
     overflow: hidden;
     
 }
-
+.textkub{
+    display: flex;
+    white-space: nowrap;
+}
 .textwrap{
+    mask-image: linear-gradient(to right, rgba(245, 245, 245, 0), black, rgba(245, 245, 245, 0));
     margin: 100px 0 100px 0;
     width: 100%;
+    white-space: nowrap;
 }
 .an2text{
     width: 100%;
     display: flex;
     gap: 20px;
-    animation: move 40s infinite linear;
+    flex: none;
+    
     h1{
         font-weight: 300;
         font-size: 3rem;

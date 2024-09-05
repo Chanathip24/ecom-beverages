@@ -62,7 +62,7 @@ const Topseller = () => {
             </button>
           </div>
         </div>
-        <div className="card-container container-fluid">
+        <div className="card-container container-fluid" >
           <motion.div
             className="card-wrapper"
             initial="hidden" //คุม animation ของ children

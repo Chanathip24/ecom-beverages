@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Product from "./pages/Product";
 import Allproducts from "./pages/Allproducts";
 import Dashboard from "./pages/Dashboard";
+import Apitest from "./pages/Apitest";
 
 //protectroute admin
 import ProtectRoute from "./services/ProtectRoute";
@@ -27,6 +28,7 @@ function App() {
             } />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/allproducts" element={<Allproducts />} />
+          <Route path="/testapi"  element={<Apitest/>}/>
           <Route
             path="/dashboard"
             element={

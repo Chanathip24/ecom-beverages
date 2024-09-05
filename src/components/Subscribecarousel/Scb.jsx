@@ -1,7 +1,7 @@
 import React from 'react'
 import './Scb.css'
 const Scb = () => {
-    console.log("asdsadsad")
+    
   return (
     <div className='scb'>
         <div className='scb-container'>

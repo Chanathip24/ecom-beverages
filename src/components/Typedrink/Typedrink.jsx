@@ -56,7 +56,7 @@ const Typedrink = () => {
       <div className="typedrink">
         <div className="content-wrapper">
           <Subcarousel />
-          <div className="card">
+          <div className="card" >
             {allshop.map((item, index) => (
               <Scard product={item} key={index} />
             ))}

@@ -3,45 +3,66 @@ import "./Register.css";
 import Log_in from "./Log_in";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import toast,{Toaster} from 'react-hot-toast'
+import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
+
 const Register = () => {
-  axios.defaults.withCredentials= true
-  const navigate = useNavigate()
+  axios.defaults.withCredentials = true;
+  const navigate = useNavigate();
   const [button, setbutton] = useState(2);
-    const[user,setuser] = useState({
-        email : '',
-        password : ''
-    })
+  const [user, setuser] = useState({
+    email: "",
+    password: "",
+  });
+  const [err, setErr] = useState(null)
   const setactive = (id) => {
     setbutton(id);
   };
-  const handlechange=(event)=>{
-    setuser((prev)=>({...prev,[event.target.name]:event.target.value}))
-  }
-  const handlesubmit= async (event)=>{
-    event.preventDefault()
+  const handlechange = (event) => {
+    setuser((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+  const handlesubmit = async (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "Logging in....",
+      text: "Please wait",
+      icon: "info",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+      allowOutsideClick: false,
+    });
     try {
-        const res = await axios.post(`${import.meta.env.VITE_URL}/login`,user)
-        if(res.data.msg === "pass"){
-            const token = res.headers['authorization'].split(' ')[1]
-            localStorage.setItem('authToken',token)
-            toast.success("Login Success")
-            setTimeout(() => {
-              navigate('/dashboard')
-            }, 1500);
-            
-        }else{
-          toast.error(res.data)
-        }
+      const res = await axios.post(`${import.meta.env.VITE_URL}/login`, user);
+      Swal.close();
+      if (res.data.msg === "pass") {
+        const token = res.headers["authorization"].split(" ")[1];
+        localStorage.setItem("authToken", token);
+        toast.success("Login Success");
+        Swal.fire({
+          title: "Welcome คับ",
+          text : "เข้าสู่ระบบเรียบร้อยแย้ว",
+          icon: "success",
+          allowOutsideClick: false,
+          showConfirmButton : false,
+          timer : 1500,
+          timerProgressBar : true
+        });
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1500);
+      } else {
+        setErr(res.data)
+        toast.error(res.data)
+      }
     } catch (error) {
-      console.log(error)
-      toast.error("Username or Password is wrong.")
-
+      Swal.close()
+      setErr(error.response.data.msg)
     }
-  }
+  };
   return (
     <>
-    <Toaster/>
+      <Toaster />
       <div className="authen container-fluid">
         <div className="img">
           <img
@@ -72,17 +93,33 @@ const Register = () => {
                 <p>Conveniently manage your subscriptions and more.</p>
               </div>
             </div>
+            
             {button === 1 ? (
               <Log_in />
             ) : (
               <form className="autheninput">
-                <label htmlFor="email" >Email</label>
-                <input type="email" placeholder="Email" name="email" onChange={handlechange} required/>
+                {err && <h4 style={{color : "red" }}>{err}</h4>}
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  onChange={handlechange}
+                  required
+                />
                 <label htmlFor="Password">Password</label>
-                <input type="password" placeholder="Password" onChange={handlechange} name="password" required/>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  onChange={handlechange}
+                  name="password"
+                  required
+                />
                 <p>FORGOT PASSWORD?</p>
                 <div>
-                  <button className="login" onClick={handlesubmit}>LOGIN</button>
+                  <button className="login" onClick={handlesubmit}>
+                    LOGIN
+                  </button>
                 </div>
               </form>
             )}

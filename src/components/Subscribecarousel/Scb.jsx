@@ -3,7 +3,7 @@ import './Scb.css'
 const Scb = () => {
     
   return (
-    <div className='scb'>
+    <div className='scb container'>
         <div className='scb-container'>
             <div className='scb-right'>
                 <h1>Subscribe and never run out of your favorites!</h1>

@@ -53,7 +53,7 @@ const Typedrink = () => {
           Microtea
         </button>
       </div>
-      <div className="typedrink">
+      <div className="container typedrink">
         <div className="content-wrapper">
           <Subcarousel />
           <div className="card" >

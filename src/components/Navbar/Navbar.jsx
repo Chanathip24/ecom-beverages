@@ -20,7 +20,7 @@ const Navbar = () => {
         },
       });
       if (res.data.role === "ADMIN") setAuthen("ADMIN");
-      if (res.data.role === "MEMBER") setAuthen("MEMBER");
+      if (res.data.role === "CUSTOMER") setAuthen("CUSTOMER");
     } catch (error) {
       console.log(error);
       setAuthen(false);

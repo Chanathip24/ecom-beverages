@@ -9,6 +9,7 @@ import Announce2 from '../components/Announce2/Announce2'
 import Typedrink from '../components/Typedrink/Typedrink'
 import Scb from '../components/Subscribecarousel/Scb'
 import Announce from '../components/Announcemnet/Announce'
+import Footer from '../components/Footer/Footer'
 const Index = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const Index = () => {
       <Announce2/>
       <Typedrink/>
       <Scb/>
+      <Footer/>
     </main>
 
     

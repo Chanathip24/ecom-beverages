@@ -2,27 +2,32 @@ import React, { useState } from "react";
 import { Scard } from "../Shop/SCard/Scard";
 import "./Topseller.css";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const Topseller = () => {
   const allshop = [
     {
+      id : 1,
       title: "Black Summer Glass",
       price : "21.30",
       desc : "Black Durable Borosilicate Glass Bottle",
       imgurl: "image/s1.webp"
     },
     {
+      id : 2,
       title: "2+2 Limited Summer Set",
       price : "27.30",
       desc : "Real Tea, Vitamin and Zero Sugar",
       imgurl: "image/s2.webp"
     },
     {
+      id : 3,
       title: "ICED TEA Set",
       price : "44.30",
       desc : "Vitamin and Zero Sugar",
       imgurl: "image/S3.webp"
     },
     {
+      id : 4,
       title: "Summer Glass",
       price : "29.30",
       desc : "Durable Borosilicate Glass Bottle",
@@ -35,6 +40,8 @@ const Topseller = () => {
   };
   return (
     <>
+    
+    
       <div className="mt-2 container-fluid">
         <div className="topseller container">
           <h1>Discover our Top Sellers</h1>

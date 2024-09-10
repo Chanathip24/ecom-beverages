@@ -6,27 +6,9 @@ import axios from "axios";
 import Dashusercard from "./Dashusercard";
 import { TbH1 } from "react-icons/tb";
 
-const Dashusers = () => {
+const Dashusers = ({data,setData}) => {
     axios.defaults.withCredentials = true;
-    const [data,setData] = useState([])
-    const getuser = async ()=>{
-        try {
-            const res = await axios.get(`${import.meta.env.VITE_URL}/users`,{
-                headers:{
-                    Authorization : `Bearer ${localStorage.getItem('authToken')}`
-                }
-            })
-            setData(res.data.result)
-        } catch (error) {
-            console.log(error)
-        }
-        
-        
-    }
-    useEffect(()=>{
-        getuser()
-        
-    },[])
+
   return (
     <div className="dashuser">
       <div className="dashuser-title">

@@ -1,10 +1,10 @@
 .dashsidebar {
-  width: 18%;
+  width: 100%;
   padding: 2.5rem 2rem;
 }   
 .dashsidebar ul li {
   list-style-type: none;
-  padding: 0.9rem;
+  padding: 15px 10px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -25,4 +25,48 @@
 .dashsidebar ul li:hover{
     background-color: rgb(231, 231, 231);
     color: black;
+}
+
+.dashsidebar-res {
+  display: none;
+  width: 100%;
+}   
+.dashsidebar-res ul li {
+  list-style-type: none;
+  padding: 15px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.1s ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+.dashsidebar-res ul li.active{
+    background-color: rgb(141, 68, 209);
+    color: white;
+    
+}
+.dashsidebar-res ul li.active:hover{
+    background-color: rgb(106, 38, 170);
+    color: white;
+    
+}
+.dashsidebar-res ul li:hover{
+    background-color: rgb(231, 231, 231);
+    color: black;
+}
+
+@media screen and (max-width : 900px) {
+ 
+  .dashsidebar{
+    display: none;
+    
+  }
+  .dashsidebar-res{
+    display: inline;
+    padding: 0;
+
+  }
 }

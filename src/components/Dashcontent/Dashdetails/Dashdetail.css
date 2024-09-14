@@ -1,53 +1,188 @@
-.dashuser{
-    
-    padding: 2rem;
+.dashuser {
+  padding: 2rem;
 }
-.dashuser-title{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid gray;
-    button{
-        padding: 10px;
-        border: none;
-        background: none;
-        background-color: rgb(177, 94, 255);
-        color: white;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        cursor: pointer;
-    }
-}
-.dashuser-container{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-}
-.dashuser-card{
-    width: 100%;
-    background-color: white;
+.dashuser-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
+  button {
+    padding: 10px;
+    border: none;
+    background: none;
+    background-color: rgb(177, 94, 255);
+    color: white;
     border-radius: 5px;
-    margin-top: 1rem;
-    padding: 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 5px;
+    cursor: pointer;
+  }
 }
-.dashedit{
+.dashuser-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.dashuser-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashedit {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  h5 {
+    cursor: pointer;
+    background-color: rgb(178, 83, 255);
+    color: white;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 2rem;
-    h5{
-        cursor: pointer;
-        background-color: rgb(178, 83, 255);
-        color: white;
-        display: flex;
-        align-items: center;
-        padding: 2px;
-        border-radius: 5px;
+    padding: 2px;
+    border-radius: 5px;
+  }
+}
+
+.addproduct {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input,
+  textarea,
+  select {
+    padding: 14px 10px;
+    border: 1px solid rgb(208, 208, 208);
+    border-radius: 5px;
+  }
+  input,
+  textarea,
+  select:focus {
+    outline: none;
+  }
+  textarea {
+    resize: none;
+    height: 120px;
+  }
+  button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    background-color: rgb(10, 124, 245);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: rgb(8, 113, 224);
+  }
+}
+.add-block {
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.upload-card {
+  margin-top: 1rem;
+  border: 1px solid rgb(208, 208, 208);
+  padding: 8px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  p {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    span {
+      color: rgb(165, 165, 165);
     }
+  }
+  h2 {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .upload-img {
+    width: 12%;
+    height: 12%;
+  }
+}
+
+.addproduct-image {
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  input {
+    width: 100%;
+  }
+}
+.addproduct-name {
+  display: flex;
+  flex-direction: column;
+  input,
+  textarea,
+  select {
+    margin-bottom: 1rem;
+  }
+}
+.threepic {
+  img {
+    width: 150px;
+  }
+}
+.addproduct-publish {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: end;
+  button {
+    padding: 10px 15px;
+    border: none;
+    background: none;
+    background-color: rgb(10, 124, 245);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: rgb(8, 113, 224);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .addproduct {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+  .dashuser-card{
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    align-items: start;
+    justify-content: start;
+  }
 }

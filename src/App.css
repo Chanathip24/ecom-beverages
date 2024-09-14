@@ -1,5 +1,6 @@
 .dashcontainer{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     
 }
 
@@ -9,4 +10,20 @@
     flex-grow: 1;
     height: 100vh;
     overflow-y: auto;
+}
+.pd-1{
+    padding: 1rem;
+}
+.bg-white{
+    background-color: white;
+    
+}
+.rounded{
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .dashcontainer{
+        grid-template-columns: 15% 1fr;
+    }
 }

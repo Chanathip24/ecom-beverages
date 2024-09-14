@@ -30,7 +30,6 @@ const Dashboard = () => {
       <div className="dashcontainer">
         <Dashsidebar activemenu={menu} changemenu={changemenu} />
         <div className="dashcontent">
-          <h3>You are {role} kub </h3>
           <Dashnav />
           <Dashcontent contentid={menu} />
           {/* Some content */}

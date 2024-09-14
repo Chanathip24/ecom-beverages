@@ -4,6 +4,8 @@ import Dashproducts from "./Dashdetails/Dashproducts";
 import Dashorder from "./Dashdetails/Dashorder";
 import Dashusers from "./Dashdetails/Dashusers";
 import axios from "axios";
+import Dashaddproduct from "./Dashdetails/Dashaddproduct";
+import Dashaddcate from "./Dashdetails/Dashaddcate";
 const Dashcontent = ({ contentid }) => {
   const [data,setData] = useState([])
   const getuser = async ()=>{
@@ -31,6 +33,10 @@ const Dashcontent = ({ contentid }) => {
         return <Dashorder />;
       case 4:
         return <Dashusers data={data} setData={setData} />;
+      case 6:
+        return <Dashaddproduct/>
+      case 7 : 
+        return <Dashaddcate/>
       default:
         return null;
     }

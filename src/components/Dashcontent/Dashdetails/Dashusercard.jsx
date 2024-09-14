@@ -23,6 +23,7 @@ const Dashusercard = ({
       showCancelButton : true
     }).then(async (result)=>{
       if(result.isConfirmed){
+        Swal.fire("Delete successfully","","success")
         try {
           const res = await axios.delete(
             `${import.meta.env.VITE_URL}/users/delete/${id}`,{
@@ -33,7 +34,7 @@ const Dashusercard = ({
           );
           setData((prev) => prev.filter((item) => item.id !== id));
         } catch (error) {
-          console.log(error);
+          alert("Some thing error on usercard")
         }
       }
     })
@@ -49,11 +50,12 @@ const Dashusercard = ({
       <h5>{created_at}</h5>
       <h5>{role}</h5>
       <div className="dashedit">
-        <h5 onClick={deleteuser}>
-          <CiSquareRemove />
-        </h5>
-        <h5>
+
+        <h5 style={{backgroundColor:"Blue"}}>
           <LuClipboardEdit />
+        </h5>
+        <h5 style={{backgroundColor:"red"}} onClick={deleteuser}>
+          <CiSquareRemove />
         </h5>
       </div>
     </div>

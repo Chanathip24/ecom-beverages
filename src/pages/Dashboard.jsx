@@ -3,8 +3,11 @@ import Dashnav from "../components/Dashnav/Dashnav";
 import Dashsidebar from "../components/Dashsidebar/Dashsidebar";
 import Dashcontent from "../components/Dashcontent/Dashcontent";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const Dashboard = () => {
+  
+  
   const [menu, setActive] = useState(1);
   const [role, setRole] = useState(null);
   const getrole = async () => {

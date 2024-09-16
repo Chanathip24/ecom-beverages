@@ -1,24 +1,31 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import Dashuploadcard from "../Dashcomponent/Dashuploadcard";
+
+import axios from "axios";
 const Dashaddproduct = () => {
   const [product, setProduct] = useState({
     product_name: "",
     description: "",
     price: "",
-    stock_quantity: "",
+    stock_quantity: "0",
     category_id: "1",
     sub_category: "10",
   });
   const [img, setImg] = useState(null);
-  const [preview, setPreview] = useState([]);
+
+  //product object
   const handlechange = (e) => {
     e.preventDefault();
     setProduct((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+  //image
   const handleChangeImg = (e) => {
     e.preventDefault();
     const upload = Array.from(e.target.files);
+
+    //array
     const verify = upload.filter((file) => {
       if (file.type === "image/png" || file.type === "image/jpg") {
         return file;
@@ -37,11 +44,29 @@ const Dashaddproduct = () => {
       showConfirmButton: true,
       showCancelButton: true,
       confirmButtonText: "Create",
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
-        console.log(product);
-        //result
-        Swal.fire("Success", "Create product successfully", "success");
+        //api
+        const formData = new FormData();
+        {img && formData.append("image", img)}
+
+        try {
+          const res = await axios.post(
+            `${import.meta.env.VITE_URL}/product/addproduct`,
+            product
+          );
+         
+
+          if (res.data.msg === "Success") {
+            Swal.fire("Success", "Create product successfully", "success");
+          } else {
+            Swal.fire("Error", "insert failed", "error");
+          }
+        } catch (error) {
+          Swal.fire("Error", "Server error", "error");
+        }
+
+        
       }
     });
   };
@@ -63,6 +88,7 @@ const Dashaddproduct = () => {
                         border: "1px dashed blue",
                         borderRadius: "18px",
                       }}
+                      key={key}
                     />
                   ))
                 ) : (
@@ -92,7 +118,6 @@ const Dashaddproduct = () => {
 
               <label htmlFor="category_id">Category</label>
               <select name="category_id" onChange={handlechange} id="">
-                
                 <option value="1">Soft Drinks</option>
                 <option value="2">Juices</option>
                 <option value="3">Tea & Coffee</option>

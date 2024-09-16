@@ -6,8 +6,10 @@ import Dashusers from "./Dashdetails/Dashusers";
 import axios from "axios";
 import Dashaddproduct from "./Dashdetails/Dashaddproduct";
 import Dashaddcate from "./Dashdetails/Dashaddcate";
+import { useParams } from "react-router-dom";
 const Dashcontent = ({ contentid }) => {
   const [data,setData] = useState([])
+  const {page} = useParams()
   const getuser = async ()=>{
       try {
           const res = await axios.get(`${import.meta.env.VITE_URL}/users`,{
@@ -24,21 +26,21 @@ const Dashcontent = ({ contentid }) => {
       getuser()
   },[])
   const renderContent = () => {
-    switch (contentid) {
-      case 1:
+    switch (page) {
+      case "main":
         return <Dashchart />;
-      case 2:
+      case "allproducts":
         return <Dashproducts />;
-      case 3:
+      case "orders":
         return <Dashorder />;
-      case 4:
+      case "allusers":
         return <Dashusers data={data} setData={setData} />;
-      case 6:
+      case "addproduct":
         return <Dashaddproduct/>
-      case 7 : 
+      case "category" : 
         return <Dashaddcate/>
       default:
-        return null;
+        return <h1>Welcome to dashboard click menu to start</h1>;
     }
   };
   return (
